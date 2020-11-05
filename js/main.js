@@ -40,5 +40,5 @@ setTimeout(
     $('#right').text('I numeri che hai indovinato sono: ' + rightAnswer)
 
   },
-  5000
+  30000
 )
