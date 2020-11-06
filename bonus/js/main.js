@@ -26,9 +26,9 @@ $('.centralBtn').click(function(){
   var slider = setInterval(slideColors, 1000);
 
   //Dopo 30 secondi richiedo 5 numeri all'utente e li salvo in un array
-  var userNumbers= []
+  var userNumbers= [];
   var numRightAnswer = 0;
-  var rightAnswer = []
+  var rightAnswer = [];
 
   setTimeout(
 
@@ -46,13 +46,13 @@ $('.centralBtn').click(function(){
         }
       }
     //Mostro il numero di risposte corrette, il dettaglio e blocca animazione colore
-      clearInterval(slider)
-      alert('Hai indovinato ' + numRightAnswer + ' numeri')
+      clearInterval(slider);
+      alert('Hai indovinato ' + numRightAnswer + ' numeri');
       if (rightAnswer.length != 0){
-        alert('I numeri che hai indovinato sono: ' + rightAnswer)
+        alert('I numeri che hai indovinato sono: ' + rightAnswer);
       }
     },
-    10000
+    30000
   )
 
 })
