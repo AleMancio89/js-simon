@@ -15,3 +15,19 @@ function isMatchInArray(num, numArray) {
   }
   return false;
 }
+
+//Funzione per gestire slide dei colori
+
+function slideColors() {
+
+  var squareEl = $('.opacity')
+
+  if ( $('.last').hasClass('opacity') ){
+    $('.first').addClass('opacity')
+    $('.last').removeClass('opacity')
+  } else{
+    squareEl.removeClass('opacity')
+    squareEl.siblings().removeClass('opacity')
+    squareEl.next().addClass('opacity')
+  }
+}
