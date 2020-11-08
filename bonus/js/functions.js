@@ -1,8 +1,8 @@
 //Funzione per generare un numerorandom da 1 a 100
 
-function createRandomNumber1to100() {
-  var randomNumber = Math.floor(Math.random() * 100) + 1
-  return randomNumber
+function createRandomNumber(min, max) {
+  var randomNumber = Math.floor(Math.random() * max) + min
+  return randomNumber;
 }
 
 //Funzione per controllare se un numero è presente in un array

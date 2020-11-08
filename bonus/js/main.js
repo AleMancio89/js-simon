@@ -13,7 +13,7 @@ $('.centralBtn').click(function(){
   var pcNumbers = [];
 
   while (pcNumbers.length < NUMPCNUMBERS){
-    var number = createRandomNumber1to100();
+    var number = createRandomNumber(1, 100);
     if (!isMatchInArray(number, pcNumbers)){
       pcNumbers.push(number);
     }
@@ -32,24 +32,30 @@ $('.centralBtn').click(function(){
 
   setTimeout(
 
-  //Chiedo 5 numeri all'utente e li salvo in un array
+    //Chiedo 5 numeri all'utente, verifico che non ci siano doppi inserimenti e li salvo in un array
     function(){
       while (userNumbers.length < 5) {
         var userInput = parseInt(prompt('Inserisci il numero'));
-        userNumbers.push(userInput);
+        if (isMatchInArray(userInput, userNumbers)){
+          alert('Hai già inserito questo numero!')
+        } else {
+          userNumbers.push(userInput);
+        }
       }
+
     //Verifico quanti numeri siano corretti
       for(var i = 0; i < pcNumbers.length;i++) {
-        if (pcNumbers[i] === userNumbers[i]){
+        if (isMatchInArray(userNumbers[i], pcNumbers)){
           numRightAnswer++;
           rightAnswer.push(pcNumbers[i]);
         }
       }
+
     //Mostro il numero di risposte corrette, il dettaglio e blocca animazione colore
       clearInterval(slider);
       alert('Hai indovinato ' + numRightAnswer + ' numeri');
       if (rightAnswer.length != 0){
-        alert('I numeri che hai indovinato sono: ' + rightAnswer);
+        alert('I numeri che hai indovinato sono: ' + rightAnswer.join(' - '));
       }
     },
     30000
