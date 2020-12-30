@@ -1,7 +1,7 @@
-//Funzione per generare un numerorandom da 1 a 100
+//Funzione per generare un numerorandom da 1 a 100 (inclusi)
 
 function createRandomNumber(min, max) {
-  var randomNumber = Math.floor(Math.random() * max) + min
+  var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min
   return randomNumber;
 }
 

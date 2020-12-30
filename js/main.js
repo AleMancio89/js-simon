@@ -38,14 +38,13 @@ setTimeout(
   //Verifico quanti numeri siano corretti
     for(var i = 0; i < pcNumbers.length;i++) {
       if (isMatchInArray(userNumbers[i], pcNumbers)){
-        numRightAnswer++;
         rightAnswer.push(pcNumbers[i]);
       }
     }
 
 
     //Mostro il numero di risposte corrette e il dettaglio
-    alert('Hai indovinato ' + numRightAnswer + ' numeri');
+    alert('Hai indovinato ' + rightAnswer.length + ' numeri');
     if (rightAnswer.length != 0){
         alert('I numeri che hai indovinato sono: ' + rightAnswer.join(' - '))
     }
